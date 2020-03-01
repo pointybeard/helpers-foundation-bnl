@@ -1,0 +1,28 @@
+{
+    "name": "pointybeard/helpers-foundation-bnl",
+    "description": "Provides broadcaster & listener pattern classes",
+    "homepage": "https://github.com/pointybeard/helpers-foundation-bnl",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Alannah Kearney",
+            "email": "hi@alannahkearney.com",
+            "homepage": "http://alannahkearney.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/pointybeard/helpers-foundation-bnl/issues",
+        "wiki": "https://github.com/pointybeard/helpers-foundation-bnl/wiki"
+    },
+    "require": {
+        "php": ">=7.2",
+        "pointybeard/helpers-exceptions-readabletrace": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "pointybeard\\Helpers\\Foundation\\": "src/"
+        }
+    }
+}

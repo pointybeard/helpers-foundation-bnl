@@ -8,11 +8,15 @@ trait HasListenerTrait
 {
     protected $listeners;
 
-    public function addListener(callable $callback): object
-    {
+    protected function initListenersIterator() {
         if (false == ($this->listeners instanceof \ArrayIterator)) {
             $this->listeners = new \ArrayIterator();
         }
+    }
+
+    public function addListener(callable $callback): object
+    {
+        $this->initListenersIterator();
         $this->listeners->append($callback);
 
         return $this;
@@ -20,11 +24,13 @@ trait HasListenerTrait
 
     public function hasListeners(): bool
     {
+        $this->initListenersIterator();
         return $this->listeners()->count() > 0;
     }
 
     public function listeners(): \ArrayIterator
     {
+        $this->initListenersIterator();
         return $this->listeners;
     }
 }
